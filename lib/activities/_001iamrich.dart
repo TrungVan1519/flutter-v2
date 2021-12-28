@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
     return const Center(
       child: Image(
         image: AssetImage(
-          'images/vi.jpeg',
+          'images/lol.jpeg',
         ),
       ),
     );

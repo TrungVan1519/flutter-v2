@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 // import 'activities/_001Iamrich.dart';
-import 'activities/_002micard.dart';
+// import 'activities/_002micard.dart';
+import 'activities/_003dicee.dart';
 
 void main() {
   runApp(
