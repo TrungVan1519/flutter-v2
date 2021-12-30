@@ -1,14 +1,19 @@
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+import '../widgets/myscaffold.dart';
 
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Image(
-        image: AssetImage(
-          'images/lol.jpeg',
+    return MyScaffold(
+      title: 'I am rich',
+      child: Center(
+        child: Image(
+          image: AssetImage(
+            'images/lol.jpeg',
+          ),
         ),
       ),
     );

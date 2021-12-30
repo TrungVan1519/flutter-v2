@@ -1,9 +1,11 @@
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+import '../widgets/myscaffold.dart';
 
+class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -21,14 +23,13 @@ class _MyAppState extends State<MyApp> {
     if (leftDice == rightDice) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: const Text('You won!'),
+          content: Text(
+            'You won!',
+          ),
           action: SnackBarAction(
             label: 'Ok',
-            onPressed: () => ScaffoldMessenger.of(context).hideCurrentSnackBar(),
-          ),
-          behavior: SnackBarBehavior.floating,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
+            onPressed: () =>
+                ScaffoldMessenger.of(context).hideCurrentSnackBar(),
           ),
         ),
       );
@@ -37,34 +38,35 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        children: [
-          Expanded(
-            flex: 1,
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: TextButton(
-                onPressed: () => updateDices(context),
-                child: Image.asset(
-                  'images/dice$leftDice.png',
+    return MyScaffold(
+      title: 'Dicee',
+      child: Center(
+        child: Row(
+          children: [
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.all(10.0),
+                child: TextButton(
+                  onPressed: () => updateDices(context),
+                  child: Image.asset(
+                    'images/dice$leftDice.png',
+                  ),
                 ),
               ),
             ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: TextButton(
-                onPressed: () => updateDices(context),
-                child: Image.asset(
-                  'images/dice$rightDice.png',
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.all(10.0),
+                child: TextButton(
+                  onPressed: () => updateDices(context),
+                  child: Image.asset(
+                    'images/dice$rightDice.png',
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

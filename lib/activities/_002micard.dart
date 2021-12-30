@@ -1,152 +1,121 @@
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+import '../widgets/myscaffold.dart';
 
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const CircleAvatar(
-          radius: 50.0,
-          backgroundImage: AssetImage(
-            'images/vi.jpeg',
-          ),
-        ),
-        const Text(
-          'Violet',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 30.0,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Pacifico',
-            letterSpacing: 1.0,
-          ),
-        ),
-        const SizedBox(
-          width: 200.0,
-          height: 10.0,
-          child: Divider(
-            color: Colors.white,
-            height: 10.0,
-            thickness: 1.0,
-          ),
-        ),
-        const Card(
-          color: Colors.white,
-          margin: EdgeInsets.symmetric(
-            vertical: 10.0,
-            horizontal: 25.0,
-          ),
-          child: ListTile(
-            leading: Icon(
-              Icons.phone,
-              color: Colors.pink,
-              size: 20.0,
+    return MyScaffold(
+      title: 'Mi Card',
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CircleAvatar(
+            radius: 50.0,
+            backgroundImage: AssetImage(
+              'images/vi.jpeg',
             ),
-            title: Text(
-              '+01 2345 6789',
-              style: TextStyle(
+          ),
+          Text(
+            'Violet',
+            style: TextStyle(
+              fontSize: 30.0,
+              color: Colors.white,
+            ),
+          ),
+          SizedBox(
+            width: 200.0,
+            height: 10.0,
+            child: Divider(
+              color: Colors.white,
+              height: 10.0,
+              thickness: 1.0,
+            ),
+          ),
+          Card(
+            child: ListTile(
+              leading: Icon(
+                Icons.phone,
                 color: Colors.pink,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
+              ),
+              title: Text(
+                '+01 2345 6789',
               ),
             ),
           ),
-        ),
-        Card(
-          color: Colors.white,
-          margin: const EdgeInsets.symmetric(
-            vertical: 10.0,
-            horizontal: 25.0,
+          Card(
+            child: Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.email,
+                  ),
+                  SizedBox(
+                    width: 40.0,
+                  ),
+                  Text(
+                    'vi@zaun.com',
+                  ),
+                ],
+              ),
+            ),
           ),
-          child: Padding(
-            padding: const EdgeInsets.all(15.0),
+          Container(
+            margin: EdgeInsets.symmetric(
+              vertical: 10.0,
+              horizontal: 25.0,
+            ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5.0),
+              color: Colors.white,
+            ),
+            padding: EdgeInsets.all(15.0),
             child: Row(
-              children: const [
+              children: [
                 Icon(
-                  Icons.email,
-                  color: Colors.pink,
-                  size: 20.0,
+                  Icons.home,
                 ),
                 SizedBox(
                   width: 40.0,
                 ),
                 Text(
-                  'vi@zaun.com',
-                  style: TextStyle(
-                    color: Colors.pink,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                )
+                  'Zaun',
+                ),
               ],
             ),
           ),
-        ),
-        Container(
-          color: Colors.white,
-          margin: const EdgeInsets.symmetric(
-            vertical: 10.0,
-            horizontal: 25.0,
-          ),
-          padding: const EdgeInsets.all(15.0),
-          child: Row(
-            children: const [
-              Icon(
-                Icons.home,
-                color: Colors.pink,
-                size: 20.0,
-              ),
-              SizedBox(
-                width: 40.0,
-              ),
-              Text(
-                'Zaun',
-                style: TextStyle(
-                  color: Colors.pink,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
+          Container(
+            margin: EdgeInsets.symmetric(
+              vertical: 10.0,
+              horizontal: 25.0,
+            ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5.0),
+              color: Colors.white,
+            ),
+            padding: EdgeInsets.all(15.0),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.male,
                 ),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          color: Colors.white,
-          margin: const EdgeInsets.symmetric(
-            vertical: 10.0,
-            horizontal: 25.0,
-          ),
-          padding: const EdgeInsets.all(15.0),
-          child: Row(
-            children: const [
-              Icon(
-                Icons.male,
-                color: Colors.pink,
-                size: 20.0,
-              ),
-              Icon(
-                Icons.female,
-                color: Colors.pink,
-                size: 20.0,
-              ),
-              SizedBox(
-                width: 20.0,
-              ),
-              Text(
-                'Less',
-                style: TextStyle(
-                  color: Colors.pink,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
+                Icon(
+                  Icons.female,
                 ),
-              ),
-            ],
+                SizedBox(
+                  width: 20.0,
+                ),
+                Text(
+                  'Less',
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
