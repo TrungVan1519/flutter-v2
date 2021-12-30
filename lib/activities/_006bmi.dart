@@ -74,7 +74,9 @@ class _MyAppState extends State<MyApp> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Height'),
+                  Text(
+                    'Height',
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -230,7 +232,7 @@ class _MyAppState extends State<MyApp> {
             color: Colors.pink[300]!,
             onTap: () {
               BmiBrain bmi = BmiBrain(height: height, weight: weight);
-              Navigator.pushNamed(context, '/_006bmi_result', arguments: {
+              Navigator.pushNamed(context, '/_006bmi/result', arguments: {
                 'bmiResult': bmi.calculateBMI(),
                 'resultText': bmi.getResult(),
                 'interprtation': bmi.getInterpretation(),

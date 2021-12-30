@@ -9,6 +9,9 @@ import 'activities/_004xylophone.dart' as _004xylophone;
 import 'activities/_005quizzler.dart' as _005quizzler;
 import 'activities/_006bmi.dart' as _006bmi;
 import 'activities/_006bmi_result.dart' as _006bmi_result;
+import 'activities/_007clima.dart' as _007clima;
+import 'activities/_007clima_city.dart' as _007clima_city;
+import 'activities/_007clima_result.dart' as _007clima_result;
 
 import 'widgets/myscaffold.dart';
 
@@ -91,7 +94,30 @@ void main() {
         '/_004xylophone': (context) => _004xylophone.MyApp(),
         '/_005quizzler': (context) => _005quizzler.MyApp(),
         '/_006bmi': (context) => _006bmi.MyApp(),
-        '/_006bmi_result': (context) => _006bmi_result.MyApp(),
+        '/_007clima': (context) => _007clima.MyApp(),
+        '/_007clima/city': (context) => _007clima_city.CityScreen(),
+      },
+      onGenerateRoute: (settings) {
+        final args = settings.arguments as Map<String, dynamic>;
+
+        switch (settings.name) {
+          case '/_006bmi/result':
+            return MaterialPageRoute(
+              builder: (context) => _006bmi_result.MyApp(
+                bmiResult: args['bmiResult'],
+                resultText: args['resultText'],
+                interprtation: args['interprtation'],
+              ),
+            );
+          case '/_007clima/result':
+            return MaterialPageRoute(
+              builder: (context) => _007clima_result.LocationScreen(
+                weatherData: args['weatherData'],
+              ),
+            );
+          default:
+            break;
+        }
       },
     ),
   );
@@ -105,6 +131,7 @@ class MyApp extends StatelessWidget {
     '/_004xylophone',
     '/_005quizzler',
     '/_006bmi',
+    '/_007clima',
   ];
 
   @override

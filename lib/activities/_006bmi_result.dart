@@ -8,6 +8,13 @@ import '../widgets/myscaffold.dart';
 enum Gender { male, female }
 
 class MyApp extends StatefulWidget {
+  final String bmiResult, resultText, interprtation;
+
+  MyApp(
+      {required this.bmiResult,
+      required this.resultText,
+      required this.interprtation});
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -15,8 +22,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    final bmi = ModalRoute.of(context)!.settings.arguments as Map<String, String>;
-
     return MyScaffold(
       title: 'BMI Result',
       child: Column(
@@ -42,7 +47,7 @@ class _MyAppState extends State<MyApp> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    bmi['bmiResult']!,
+                    widget.bmiResult,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.teal,
@@ -50,14 +55,14 @@ class _MyAppState extends State<MyApp> {
                     ),
                   ),
                   Text(
-                    bmi['resultText']!,
+                    widget.resultText,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 50.0,
                     ),
                   ),
                   Text(
-                    bmi['interprtation']!,
+                    widget.interprtation,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.pink[300],
