@@ -3,9 +3,10 @@
 import 'package:flutter/material.dart';
 
 import '../entities/weather.dart';
+import '../widgets/myscaffold.dart';
 
 class LocationScreen extends StatefulWidget {
-  final weatherData;
+  final dynamic weatherData;
 
   LocationScreen({required this.weatherData});
 
@@ -39,7 +40,8 @@ class _LocationScreenState extends State<LocationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MyScaffold(
+      title: 'Clima',
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -76,7 +78,9 @@ class _LocationScreenState extends State<LocationScreen> {
                       String typedName =
                           await Navigator.pushNamed(context, '/_007clima/city')
                               as String;
-                      updateUI(await weather.getCityWeather(typedName));
+                      if (typedName.isNotEmpty) {
+                        updateUI(await weather.getCityWeather(typedName));
+                      }
                     },
                     child: Icon(
                       Icons.location_city,

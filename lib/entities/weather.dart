@@ -1,8 +1,10 @@
+// ignore_for_file: avoid_print
+
 import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-var token = 'ccc50aa46d489f73a2045e6b7fd6a3cd';
+var token = '...'; // your-api-openweathermap-token
 const openWeatherMapURL = 'https://api.openweathermap.org/data/2.5/weather';
 
 class Weather {

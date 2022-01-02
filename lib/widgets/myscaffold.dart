@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 
 class MyScaffold extends StatelessWidget {
   final String title;
-  final Widget child;
+  final Widget? child;
+  final Widget? body;
 
-  MyScaffold({required this.title, required this.child});
+  MyScaffold({required this.title, this.child, this.body});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +17,10 @@ class MyScaffold extends StatelessWidget {
           title,
         ),
       ),
-      body: SafeArea(
-        child: child,
-      ),
+      body: body ??
+          SafeArea(
+            child: child!,
+          ),
     );
   }
 }

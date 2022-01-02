@@ -2,16 +2,16 @@
 
 import 'package:flutter/material.dart';
 
-import 'activities/_001iamrich.dart' as _001iamrich;
-import 'activities/_002micard.dart' as _002micard;
-import 'activities/_003dicee.dart' as _003dicee;
-import 'activities/_004xylophone.dart' as _004xylophone;
-import 'activities/_005quizzler.dart' as _005quizzler;
-import 'activities/_006bmi.dart' as _006bmi;
-import 'activities/_006bmi_result.dart' as _006bmi_result;
-import 'activities/_007clima.dart' as _007clima;
-import 'activities/_007clima_city.dart' as _007clima_city;
-import 'activities/_007clima_result.dart' as _007clima_result;
+import 'screens/_001iamrich.dart' as _001iamrich;
+import 'screens/_002micard.dart' as _002micard;
+import 'screens/_003dicee.dart' as _003dicee;
+import 'screens/_004xylophone.dart' as _004xylophone;
+import 'screens/_005quizzler.dart' as _005quizzler;
+import 'screens/_006bmi.dart' as _006bmi;
+import 'screens/_006bmi_result.dart' as _006bmi_result;
+import 'screens/_007clima.dart' as _007clima;
+import 'screens/_007clima_city.dart' as _007clima_city;
+import 'screens/_007clima_result.dart' as _007clima_result;
 
 import 'widgets/myscaffold.dart';
 

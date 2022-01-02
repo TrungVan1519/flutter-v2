@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import '../entities/weather.dart';
+import '../widgets/myscaffold.dart';
 
 class MyApp extends StatefulWidget {
   @override
@@ -14,9 +15,8 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   void getWeatherData() async {
-    var weatherData = await Weather().getLocationWeather();
     Navigator.pushNamed(context, '/_007clima/result', arguments: {
-      'weatherData': weatherData,
+      'weatherData': await Weather().getLocationWeather(),
     });
   }
 
@@ -28,8 +28,9 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
+    return MyScaffold(
+      title: 'Clima',
+      child: Center(
         child: SpinKitDoubleBounce(
           color: Colors.white,
           size: 100.0,
