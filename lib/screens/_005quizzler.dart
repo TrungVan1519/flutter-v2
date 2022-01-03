@@ -8,12 +8,12 @@ import '../widgets/myscaffold.dart';
 
 QuizBrain quizBrain = QuizBrain();
 
-class MyApp extends StatefulWidget {
+class MyScreen extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _MyScreenState createState() => _MyScreenState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyScreenState extends State<MyScreen> {
   List<Icon> scoreKeeper = [];
 
   void checkAnswer(bool userPickedAnswer) {

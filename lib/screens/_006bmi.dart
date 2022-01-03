@@ -12,12 +12,12 @@ import '../widgets/myscaffold.dart';
 
 enum Gender { male, female }
 
-class MyApp extends StatefulWidget {
+class MyScreen extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _MyScreenState createState() => _MyScreenState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyScreenState extends State<MyScreen> {
   Gender gender = Gender.male;
   double height = 180;
   double weight = 50;

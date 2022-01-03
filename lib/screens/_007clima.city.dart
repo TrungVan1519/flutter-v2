@@ -2,12 +2,12 @@
 
 import 'package:flutter/material.dart';
 
-class CityScreen extends StatefulWidget {
+class MyScreen extends StatefulWidget {
   @override
-  _CityScreenState createState() => _CityScreenState();
+  _MyScreenState createState() => _MyScreenState();
 }
 
-class _CityScreenState extends State<CityScreen> {
+class _MyScreenState extends State<MyScreen> {
   late String cityName;
 
   @override

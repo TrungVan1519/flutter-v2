@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 import '../entities/weather.dart';
 import '../widgets/myscaffold.dart';
 
-class LocationScreen extends StatefulWidget {
+class MyScreen extends StatefulWidget {
   final dynamic weatherData;
 
-  LocationScreen({required this.weatherData});
+  MyScreen({required this.weatherData});
 
   @override
-  _LocationScreenState createState() => _LocationScreenState();
+  _MyScreenState createState() => _MyScreenState();
 }
 
-class _LocationScreenState extends State<LocationScreen> {
+class _MyScreenState extends State<MyScreen> {
   Weather weather = Weather();
   num temperature = 0;
   String weatherIcon = 'Error';

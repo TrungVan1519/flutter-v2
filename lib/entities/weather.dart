@@ -4,7 +4,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-var token = '...'; // your-api-openweathermap-token
+var token = 'YOUR-API-TOKEN-HERE';
 const openWeatherMapURL = 'https://api.openweathermap.org/data/2.5/weather';
 
 class Weather {

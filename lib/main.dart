@@ -8,10 +8,11 @@ import 'screens/_003dicee.dart' as _003dicee;
 import 'screens/_004xylophone.dart' as _004xylophone;
 import 'screens/_005quizzler.dart' as _005quizzler;
 import 'screens/_006bmi.dart' as _006bmi;
-import 'screens/_006bmi_result.dart' as _006bmi_result;
+import 'screens/_006bmi.result.dart' as _006bmi_result;
 import 'screens/_007clima.dart' as _007clima;
-import 'screens/_007clima_city.dart' as _007clima_city;
-import 'screens/_007clima_result.dart' as _007clima_result;
+import 'screens/_007clima.city.dart' as _007clima_city;
+import 'screens/_007clima.result.dart' as _007clima_result;
+import 'screens/_008bitcoin.dart' as _008bitcoin;
 
 import 'widgets/myscaffold.dart';
 
@@ -87,15 +88,16 @@ void main() {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => MyApp(),
-        '/_001iamrich': (context) => _001iamrich.MyApp(),
-        '/_002micard': (context) => _002micard.MyApp(),
-        '/_003dicee': (context) => _003dicee.MyApp(),
-        '/_004xylophone': (context) => _004xylophone.MyApp(),
-        '/_005quizzler': (context) => _005quizzler.MyApp(),
-        '/_006bmi': (context) => _006bmi.MyApp(),
-        '/_007clima': (context) => _007clima.MyApp(),
-        '/_007clima/city': (context) => _007clima_city.CityScreen(),
+        '/': (context) => MyScreen(),
+        '/_001iamrich': (context) => _001iamrich.MyScreen(),
+        '/_002micard': (context) => _002micard.MyScreen(),
+        '/_003dicee': (context) => _003dicee.MyScreen(),
+        '/_004xylophone': (context) => _004xylophone.MyScreen(),
+        '/_005quizzler': (context) => _005quizzler.MyScreen(),
+        '/_006bmi': (context) => _006bmi.MyScreen(),
+        '/_007clima': (context) => _007clima.MyScreen(),
+        '/_007clima/city': (context) => _007clima_city.MyScreen(),
+        '/_008bitcoin': (context) => _008bitcoin.MyScreen(),
       },
       onGenerateRoute: (settings) {
         final args = settings.arguments as Map<String, dynamic>;
@@ -103,7 +105,7 @@ void main() {
         switch (settings.name) {
           case '/_006bmi/result':
             return MaterialPageRoute(
-              builder: (context) => _006bmi_result.MyApp(
+              builder: (context) => _006bmi_result.MyScreen(
                 bmiResult: args['bmiResult'],
                 resultText: args['resultText'],
                 interprtation: args['interprtation'],
@@ -111,7 +113,7 @@ void main() {
             );
           case '/_007clima/result':
             return MaterialPageRoute(
-              builder: (context) => _007clima_result.LocationScreen(
+              builder: (context) => _007clima_result.MyScreen(
                 weatherData: args['weatherData'],
               ),
             );
@@ -123,7 +125,7 @@ void main() {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyScreen extends StatelessWidget {
   final List<String> _activities = [
     '/_001iamrich',
     '/_002micard',
@@ -132,6 +134,7 @@ class MyApp extends StatelessWidget {
     '/_005quizzler',
     '/_006bmi',
     '/_007clima',
+    '/_008bitcoin',
   ];
 
   @override

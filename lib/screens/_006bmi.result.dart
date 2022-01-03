@@ -7,19 +7,19 @@ import '../widgets/myscaffold.dart';
 
 enum Gender { male, female }
 
-class MyApp extends StatefulWidget {
+class MyScreen extends StatefulWidget {
   final String bmiResult, resultText, interprtation;
 
-  MyApp(
+  MyScreen(
       {required this.bmiResult,
       required this.resultText,
       required this.interprtation});
 
   @override
-  _MyAppState createState() => _MyAppState();
+  _MyScreenState createState() => _MyScreenState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyScreenState extends State<MyScreen> {
   @override
   Widget build(BuildContext context) {
     return MyScaffold(

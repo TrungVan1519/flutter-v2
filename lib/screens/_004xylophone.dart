@@ -5,7 +5,7 @@ import 'package:audioplayers/audioplayers.dart';
 
 import '../widgets/myscaffold.dart';
 
-class MyApp extends StatelessWidget {
+class MyScreen extends StatelessWidget {
   void playSound(int sound) {
     AudioCache().play('note$sound.wav');
   }

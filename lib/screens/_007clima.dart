@@ -6,14 +6,14 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import '../entities/weather.dart';
 import '../widgets/myscaffold.dart';
 
-class MyApp extends StatefulWidget {
+class MyScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _MyAppState();
+    return _MyScreenState();
   }
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyScreenState extends State<MyScreen> {
   void getWeatherData() async {
     Navigator.pushNamed(context, '/_007clima/result', arguments: {
       'weatherData': await Weather().getLocationWeather(),

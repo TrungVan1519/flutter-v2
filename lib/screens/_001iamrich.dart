@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/myscaffold.dart';
 
-class MyApp extends StatelessWidget {
+class MyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
