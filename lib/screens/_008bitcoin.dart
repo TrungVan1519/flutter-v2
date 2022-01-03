@@ -20,7 +20,12 @@ class _MyScreenState extends State<MyScreen> {
     List<DropdownMenuItem> dropdownItems = [];
     for (String currency in currencies) {
       dropdownItems.add(DropdownMenuItem(
-        child: Text(currency),
+        child: Text(
+          currency,
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         value: currency,
       ));
     }

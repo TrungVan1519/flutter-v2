@@ -70,7 +70,7 @@ class _MyScreenState extends State<MyScreen> {
                     },
                     child: Icon(
                       Icons.near_me,
-                      size: 50.0,
+                      color: Colors.white,
                     ),
                   ),
                   TextButton(
@@ -84,7 +84,7 @@ class _MyScreenState extends State<MyScreen> {
                     },
                     child: Icon(
                       Icons.location_city,
-                      size: 50.0,
+                      color: Colors.white,
                     ),
                   ),
                 ],
@@ -92,6 +92,8 @@ class _MyScreenState extends State<MyScreen> {
               Padding(
                 padding: EdgeInsets.only(left: 15.0),
                 child: Row(
+                  textBaseline: TextBaseline.alphabetic,
+                  crossAxisAlignment: CrossAxisAlignment.baseline,
                   children: [
                     Text(
                       '$temperature°',
@@ -102,7 +104,7 @@ class _MyScreenState extends State<MyScreen> {
                     Text(
                       weatherIcon,
                       style: TextStyle(
-                        fontSize: 100.0,
+                        fontSize: 50.0,
                       ),
                     ),
                   ],
@@ -114,7 +116,7 @@ class _MyScreenState extends State<MyScreen> {
                   '$weatherMessage in $cityName',
                   textAlign: TextAlign.right,
                   style: TextStyle(
-                    fontSize: 60.0,
+                    fontSize: 30.0,
                   ),
                 ),
               ),
